@@ -31,6 +31,14 @@ echo 'Installing pip...'
 apt-get -y -qq install python3-pip
 echo 'Installing virtualenv...'
 pip3 install virtualenv
+echo 'Installing virtualenvwrapper...'
+pip3 install virtualenvwrapper
+echo >> /home/vagrant/.bashrc
+VAGRANT_HOME=/home/vagrant
+echo "export WORKON_HOME=$VAGRANT_HOME/.virtualenvs" >> $VAGRANT_HOME/.bashrc
+echo "export PROJECT_HOME=$VAGRANT_HOME/Devel" >> $VAGRANT_HOME/.bashrc
+echo "export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3" >> $VAGRANT_HOME/.bashrc
+echo "source /usr/local/bin/virtualenvwrapper.sh" >> $VAGRANT_HOME/.bashrc
 echo 'Installing Idle 3...'
 apt-get -y -qq install idle3
 echo 'Installing PyCharm Community Edition...'
